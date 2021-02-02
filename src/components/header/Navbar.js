@@ -94,10 +94,7 @@ export default function Navbar() {
         <div className={classes.root}>
             <AppBar position="sticky">
                 <Toolbar>
-                    <img src={Logo} alt="lego" align={'left'} height={70}/>
-                    <Typography className={classes.title} variant="h4" noWrap>
-                        Watcher
-                    </Typography>
+
                     <Button variant="contained" color="secondary" onClick={handleOpen}>
                         <Modal
                             aria-labelledby="transition-modal-title"
@@ -113,15 +110,37 @@ export default function Navbar() {
                         >
                             <Fade in={open}>
                                 <div className={classes.paper}>
-                                    <Button variant="contained" color="primary">
-                                        Primary
-                                    </Button>
+                                    asd
                                 </div>
                             </Fade>
                         </Modal>
-                        Primary
+                        Sets
                     </Button>
-
+                    <Button variant="contained" color="secondary" onClick={handleOpen}>
+                        <Modal
+                            aria-labelledby="transition-modal-title"
+                            aria-describedby="transition-modal-description"
+                            className={classes.modal}
+                            open={open}
+                            onClose={handleClose}
+                            closeAfterTransition
+                            BackdropComponent={Backdrop}
+                            BackdropProps={{
+                                timeout: 500,
+                            }}
+                        >
+                            <Fade in={open}>
+                                <div className={classes.paper}>
+                                    asd
+                                </div>
+                            </Fade>
+                        </Modal>
+                        Minifigs
+                    </Button>
+                    <img src={Logo} alt="lego" align={'left'} height={70}/>
+                    <Typography className={classes.title} variant="h4" noWrap>
+                        Watcher
+                    </Typography>
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>
                             <SearchIcon/>
