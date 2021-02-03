@@ -1,9 +1,9 @@
 import React, {createContext, useEffect, useState} from "react";
 import {getLegoThemes} from '../utils/Http'
 
-export const LegoThemeContext = createContext(undefined);
+export const LegoThemesContext = createContext(undefined);
 
-export const LegoThemeProvider = (props) => {
+export const LegoThemesProvider = (props) => {
     const [legoThemes, setLegoThemes] = useState([])
     useEffect(() => {
         getLegoThemes()
@@ -13,8 +13,9 @@ export const LegoThemeProvider = (props) => {
     }, [])
 
     return (
-        <LegoThemeContext.Provider value={{legoThemes, setLegoThemes}}>
+        <LegoThemesContext.Provider value={{legoThemes, setLegoThemes}}>
             {props.children}
-        </LegoThemeContext.Provider>
+        </LegoThemesContext.Provider>
     );
 }
+

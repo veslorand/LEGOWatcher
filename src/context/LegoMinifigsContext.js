@@ -3,7 +3,7 @@ import {getLegoMinifigs} from '../utils/Http'
 
 export const LegoMinifigsContext = createContext(undefined);
 
-export const LegoThemeProvider = (props) => {
+export const LegoMinifigsProvider = (props) => {
     const [legoMinifigs, setLegoMinifigs] = useState([])
     useEffect(() => {
         getLegoMinifigs()
