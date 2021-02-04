@@ -7,6 +7,7 @@ import Copyright from "./components/footer/Copyright";
 import {LegoThemesProvider} from "./context/LegoThemesContext";
 import {LegoSetsProvider} from "./context/LegoSetsContext";
 import {LegoMinifigsProvider} from "./context/LegoMinifigsContext";
+import {BrowserRouter as Router, Route} from "react-router-dom";
 
 export default function App() {
     return (
@@ -14,8 +15,21 @@ export default function App() {
             <LegoSetsProvider>
                 <LegoMinifigsProvider>
                     <Box my={4}>
-                        <Navbar/>
+                        <Router>
+                            <Navbar/>
+                            <Route exact path="/">
 
+                            </Route>
+                            <Route path="/sets">
+                                sets
+                            </Route>
+                            <Route path="/minifigs">
+                                minis
+                            </Route>
+                            <Route path="/wishlist">
+                                wish
+                            </Route>
+                        </Router>
                         <Copyright/>
                     </Box>
                 </LegoMinifigsProvider>
