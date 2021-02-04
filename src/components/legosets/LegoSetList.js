@@ -1,20 +1,36 @@
-import React, {useContext } from "react";
+import React, {useContext} from "react";
 import {LegoSetsContext} from "../../context/LegoSetsContext";
 import LegoSetElement from "./LegoSetElement";
+import {Grid, makeStyles} from "@material-ui/core";
 
 
 function LegoSetList() {
     const [legoSets] = useContext(LegoSetsContext);
+    const useStyles = makeStyles((theme) => ({
+        root: {
+            flexGrow: 1,
+        },
+        paper: {
+            padding: theme.spacing(1),
+            textAlign: 'center',
+            color: theme.palette.text.secondary,
+        },
+    }));
+
+    const classes = useStyles();
 
     return (
-        <div className="row" style={{flex: 1, flexDirection: 'row'}}>
+
+        <Grid container spacing={1}>
             {legoSets.map((legoSet) => (
-                <LegoSetElement
-                    key={legoSet.id}
-                    legoset={legoSet}
-                />
+                <Grid container item xs={12} spacing={3}>
+                    <LegoSetElement
+                        key={legoSet.id}
+                        legoset={legoSet}
+                        className={classes.paper}/>
+                </Grid>
             ))}
-        </div>
+        </Grid>
     );
 }
 
