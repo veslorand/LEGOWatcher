@@ -8,6 +8,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import Logo from '../.././assets/lego.png';
 import Button from '@material-ui/core/Button';
 import {Backdrop, Fade, Modal} from "@material-ui/core";
+import {Link} from "react-router-dom";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -77,7 +78,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-
 export default function Navbar() {
     const classes = useStyles();
     const [open, setOpen] = useState(false);
@@ -94,49 +94,22 @@ export default function Navbar() {
         <div className={classes.root}>
             <AppBar position="sticky">
                 <Toolbar>
+                    <Link to="/sets">
+                        <Button variant="contained" color="secondary">
+                            Sets
+                        </Button>
+                    </Link>
+                    <Link to="/minifigs">
+                        <Button variant="contained" color="secondary">
+                            Minifigs
+                        </Button>
+                    </Link>
+                    <Link to="/wishlist">
+                        <Button variant="contained" color="secondary">
+                            Wishlist
+                        </Button>
+                    </Link>
 
-                    <Button variant="contained" color="secondary" onClick={handleOpen}>
-                        <Modal
-                            aria-labelledby="transition-modal-title"
-                            aria-describedby="transition-modal-description"
-                            className={classes.modal}
-                            open={open}
-                            onClose={handleClose}
-                            closeAfterTransition
-                            BackdropComponent={Backdrop}
-                            BackdropProps={{
-                                timeout: 500,
-                            }}
-                        >
-                            <Fade in={open}>
-                                <div className={classes.paper}>
-                                    asd
-                                </div>
-                            </Fade>
-                        </Modal>
-                        Sets
-                    </Button>
-                    <Button variant="contained" color="secondary" onClick={handleOpen}>
-                        <Modal
-                            aria-labelledby="transition-modal-title"
-                            aria-describedby="transition-modal-description"
-                            className={classes.modal}
-                            open={open}
-                            onClose={handleClose}
-                            closeAfterTransition
-                            BackdropComponent={Backdrop}
-                            BackdropProps={{
-                                timeout: 500,
-                            }}
-                        >
-                            <Fade in={open}>
-                                <div className={classes.paper}>
-                                    asd
-                                </div>
-                            </Fade>
-                        </Modal>
-                        Minifigs
-                    </Button>
                     <img src={Logo} alt="lego" align={'left'} height={70}/>
                     <Typography className={classes.title} variant="h4" noWrap>
                         Watcher
