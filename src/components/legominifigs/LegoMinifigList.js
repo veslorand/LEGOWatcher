@@ -1,20 +1,23 @@
 import React, {useContext } from "react";
 import LegoMinifigElement from "./LegoMinifigElement";
 import {LegoMinifigsContext} from "../../context/LegoMinifigsContext";
+import {Grid} from "@material-ui/core";
 
 
 function LegoMinifigList() {
     const [legoMinifig] = useContext(LegoMinifigsContext);
 
     return (
-        <div className="row" style={{flex: 1, flexDirection: 'row'}}>
+        <Grid container spacing={1}>
             {legoMinifig.map((legoMinifig) => (
+                <Grid container item xs={12} spacing={3}>
                 <LegoMinifigElement
                     key={legoMinifig.id}
                     legoMinifig={legoMinifig}
                 />
+                </Grid>
             ))}
-        </div>
+        </Grid>
     );
 }
 

@@ -1,5 +1,5 @@
 import React, {createContext, useEffect, useState} from "react";
-import {getLegoThemes} from '../utils/Http'
+import {getLegoThemes} from '../utils/axios'
 
 export const LegoThemesContext = createContext(undefined);
 

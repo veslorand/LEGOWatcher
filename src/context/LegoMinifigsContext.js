@@ -1,7 +1,7 @@
 import React, {createContext, useEffect, useState} from "react";
-import {getLegoMinifigs} from '../utils/Http'
+import {getLegoMinifigs} from '../utils/axios'
 
-export const LegoMinifigsContext = createContext(undefined);
+export const LegoMinifigsContext = createContext([]);
 
 export const LegoMinifigsProvider = (props) => {
     const [legoMinifigs, setLegoMinifigs] = useState([]);

@@ -1,10 +1,10 @@
 import React, {useContext} from "react";
-import {LegoSetsContext} from "../../context/LegoSetsContext";
-import LegoSetElement from "./LegoSetElement";
 import {Grid, makeStyles} from "@material-ui/core";
+import {WishlistContext} from "../../context/WishlistContext";
+import LegoWishElement from "./LegoWishElement";
 
-function LegoSetList() {
-    const [legoSets] = useContext(LegoSetsContext);
+function LegoWishlistList() {
+    const [wishlist] = useContext(WishlistContext);
     const useStyles = makeStyles((theme) => ({
         root: {
             flexGrow: 1,
@@ -21,11 +21,11 @@ function LegoSetList() {
     return (
 
         <Grid container spacing={1}>
-            {legoSets.map((legoSet) => (
+            {wishlist.map((wish) => (
                 <Grid container item xs={12} spacing={3}>
-                    <LegoSetElement
-                        key={legoSet.id}
-                        legoset={legoSet}
+                    <LegoWishElement
+                        key={wish.id}
+                        wish={wish}
                         className={classes.paper}/>
                 </Grid>
             ))}
@@ -33,4 +33,4 @@ function LegoSetList() {
     );
 }
 
-export default LegoSetList;
+export default LegoWishlistList;

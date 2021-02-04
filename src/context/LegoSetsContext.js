@@ -1,5 +1,5 @@
 import React, {createContext, useEffect, useState} from "react";
-import {getLegoSets} from '../utils/Http'
+import {getLegoSets} from '../utils/axios'
 
 export const LegoSetsContext = createContext(undefined);
 

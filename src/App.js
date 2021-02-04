@@ -1,23 +1,25 @@
 import React from 'react';
-import Box from '@material-ui/core/Box';
 import Navbar from './components/header/Navbar';
 import Copyright from "./components/footer/Copyright";
-import {LegoThemesProvider} from "./context/LegoThemesContext";
 import {LegoSetsProvider} from "./context/LegoSetsContext";
 import {LegoMinifigsProvider} from "./context/LegoMinifigsContext";
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import Home from "./components/Home";
 import LegoSetList from "./components/legosets/LegoSetList";
 import LegoMinifigList from "./components/legominifigs/LegoMinifigList";
+import {WishlistProvider} from "./context/WishlistContext";
+import {Container} from "@material-ui/core";
+import LegoWishlistList from "./components/wishlist/LegoWishlistList";
 
 export default function App() {
     return (
-        <LegoThemesProvider>
+        <WishlistProvider>
             <LegoSetsProvider>
                 <LegoMinifigsProvider>
-                    <Box my={4}>
+                    <Container my={5} className={App}>
                         <Router>
                             <Navbar/>
+                            <br/><br/>
                             <Route exact path="/">
                                 <Home/>
                             </Route>
@@ -28,13 +30,13 @@ export default function App() {
                                 <LegoMinifigList/>
                             </Route>
                             <Route path="/wishlist">
-                                wish
+                                <LegoWishlistList/>
                             </Route>
                         </Router>
                         <Copyright/>
-                    </Box>
+                    </Container>
                 </LegoMinifigsProvider>
             </LegoSetsProvider>
-        </LegoThemesProvider>
+        </WishlistProvider>
     );
 }
