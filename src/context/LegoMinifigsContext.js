@@ -13,7 +13,7 @@ export const LegoMinifigsProvider = (props) => {
     }, [])
 
     return (
-        <LegoMinifigsContext.Provider value={{legoMinifigs, setLegoMinifigs}}>
+        <LegoMinifigsContext.Provider value={[legoMinifigs, setLegoMinifigs]}>
             {props.children}
         </LegoMinifigsContext.Provider>
     );

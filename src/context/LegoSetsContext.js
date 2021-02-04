@@ -14,7 +14,7 @@ export const LegoSetsProvider = (props) => {
     }, [])
 
     return (
-        <LegoSetsContext.Provider value={{legoSets, setLegoSets}}>
+        <LegoSetsContext.Provider value={[legoSets, setLegoSets]}>
             {props.children}
         </LegoSetsContext.Provider>
     );

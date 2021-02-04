@@ -13,7 +13,7 @@ export const LegoThemesProvider = (props) => {
     }, [])
 
     return (
-        <LegoThemesContext.Provider value={{legoThemes, setLegoThemes}}>
+        <LegoThemesContext.Provider value={[legoThemes, setLegoThemes]}>
             {props.children}
         </LegoThemesContext.Provider>
     );
