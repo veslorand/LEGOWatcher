@@ -1,13 +1,12 @@
-import React, {useState} from 'react';
+import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
-import {fade, makeStyles} from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 import Logo from '../.././assets/lego.png';
 import Button from '@material-ui/core/Button';
-import {Backdrop, Fade, Modal} from "@material-ui/core";
 import {Link} from "react-router-dom";
 
 
@@ -80,15 +79,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Navbar() {
     const classes = useStyles();
-    const [open, setOpen] = useState(false);
-
-    const handleOpen = () => {
-        setOpen(true);
-    };
-    const handleClose = () => {
-
-        setOpen(false);
-    };
 
     return (
         <div className={classes.root}>
