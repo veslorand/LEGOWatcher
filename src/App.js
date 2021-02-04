@@ -32,6 +32,9 @@ export default function App() {
                             <Route path="/wishlist">
                                 <LegoWishlistList/>
                             </Route>
+                            <Route path="/owned">
+                                <LegoWishlistList/>
+                            </Route>
                         </Router>
                         <Copyright/>
                     </Container>

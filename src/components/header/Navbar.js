@@ -96,7 +96,12 @@ export default function Navbar() {
                     </Link>
                     <Link to="/wishlist">
                         <Button variant="contained" color="secondary">
-                            Wishlist
+                            WishList
+                        </Button>
+                    </Link>
+                    <Link to="/owned">
+                        <Button variant="contained" color="secondary">
+                            Owned
                         </Button>
                     </Link>
 
