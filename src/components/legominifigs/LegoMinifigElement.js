@@ -4,6 +4,7 @@ import theme from "../../theme";
 import {CardActionArea, CardActions, CardContent, CardMedia, makeStyles} from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
+import {AddLegoToWishlist} from "../../utils/axios";
 
 function LegoMinifigElement(props) {
     const legoMinifig = props.legoMinifig;
@@ -28,7 +29,7 @@ function LegoMinifigElement(props) {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button size="small" color="secondary">
+                <Button size="small" color="secondary" onClick={AddLegoToWishlist(legoMinifig)}>
                     Add to WishList
                 </Button>
                 <Button size="small" color="secondary">
@@ -37,7 +38,6 @@ function LegoMinifigElement(props) {
             </CardActions>
         </Card>
     );
-
 }
 
 const Card = styled.div`
