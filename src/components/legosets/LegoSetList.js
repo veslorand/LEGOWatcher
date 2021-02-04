@@ -3,7 +3,6 @@ import {LegoSetsContext} from "../../context/LegoSetsContext";
 import LegoSetElement from "./LegoSetElement";
 import {Grid, makeStyles} from "@material-ui/core";
 
-
 function LegoSetList() {
     const [legoSets] = useContext(LegoSetsContext);
     const useStyles = makeStyles((theme) => ({
