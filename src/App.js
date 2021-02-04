@@ -8,6 +8,7 @@ import {LegoThemesProvider} from "./context/LegoThemesContext";
 import {LegoSetsProvider} from "./context/LegoSetsContext";
 import {LegoMinifigsProvider} from "./context/LegoMinifigsContext";
 import {BrowserRouter as Router, Route} from "react-router-dom";
+import Home from "./components/Home";
 
 export default function App() {
     return (
@@ -18,7 +19,7 @@ export default function App() {
                         <Router>
                             <Navbar/>
                             <Route exact path="/">
-
+                                <Home/>
                             </Route>
                             <Route path="/sets">
                                 sets
