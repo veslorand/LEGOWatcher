@@ -1,15 +1,27 @@
-import React from 'react';
+import React, {useState} from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
-import { fade, makeStyles } from '@material-ui/core/styles';
+import {fade, makeStyles} from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 import Logo from '../.././assets/lego.png';
 import Button from '@material-ui/core/Button';
+import {Backdrop, Fade, Modal} from "@material-ui/core";
 
 
 const useStyles = makeStyles((theme) => ({
+    modal: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    paper: {
+        backgroundColor: theme.palette.background.paper,
+        border: '2px solid #000',
+        boxShadow: theme.shadows[5],
+        padding: theme.spacing(2, 4, 3),
+    },
     root: {
         flexGrow: 1,
     },
@@ -64,24 +76,74 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+
+
 export default function Navbar() {
     const classes = useStyles();
+    const [open, setOpen] = useState(false);
+
+    const handleOpen = () => {
+        setOpen(true);
+    };
+    const handleClose = () => {
+
+        setOpen(false);
+    };
 
     return (
         <div className={classes.root}>
             <AppBar position="sticky">
                 <Toolbar>
+
+                    <Button variant="contained" color="secondary" onClick={handleOpen}>
+                        <Modal
+                            aria-labelledby="transition-modal-title"
+                            aria-describedby="transition-modal-description"
+                            className={classes.modal}
+                            open={open}
+                            onClose={handleClose}
+                            closeAfterTransition
+                            BackdropComponent={Backdrop}
+                            BackdropProps={{
+                                timeout: 500,
+                            }}
+                        >
+                            <Fade in={open}>
+                                <div className={classes.paper}>
+                                    asd
+                                </div>
+                            </Fade>
+                        </Modal>
+                        Sets
+                    </Button>
+                    <Button variant="contained" color="secondary" onClick={handleOpen}>
+                        <Modal
+                            aria-labelledby="transition-modal-title"
+                            aria-describedby="transition-modal-description"
+                            className={classes.modal}
+                            open={open}
+                            onClose={handleClose}
+                            closeAfterTransition
+                            BackdropComponent={Backdrop}
+                            BackdropProps={{
+                                timeout: 500,
+                            }}
+                        >
+                            <Fade in={open}>
+                                <div className={classes.paper}>
+                                    asd
+                                </div>
+                            </Fade>
+                        </Modal>
+                        Minifigs
+                    </Button>
                     <img src={Logo} alt="lego" align={'left'} height={70}/>
                     <Typography className={classes.title} variant="h4" noWrap>
                         Watcher
                     </Typography>
-                    <Button variant="contained" color="secondary">
-                        Primary
-                    </Button>
-
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>
-                            <SearchIcon />
+                            <SearchIcon/>
                         </div>
                         <InputBase
                             placeholder="Search…"
@@ -89,7 +151,7 @@ export default function Navbar() {
                                 root: classes.inputRoot,
                                 input: classes.inputInput,
                             }}
-                            inputProps={{ 'aria-label': 'search' }}
+                            inputProps={{'aria-label': 'search'}}
                         />
                     </div>
                 </Toolbar>
