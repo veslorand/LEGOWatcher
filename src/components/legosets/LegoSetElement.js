@@ -23,13 +23,17 @@ function LegoSetElement(props) {
                     <Typography gutterBottom variant="h5" component="h2">
                         {legoSet.name}
                     </Typography>
-                    <Typography variant="body2" color="textPrimary" component="p">
+                </CardContent>
+                <CardContent>
+                    <Typography gutterBottom variant="h5" component="h2">
                         {legoSet.parts}
                     </Typography>
                 </CardContent>
+
             </CardActionArea>
-            <CardActions>
-                <Button size="large" color="secondary" backgroundColor={'blue'} onClick={AddLegoToWishlist(props.legoMinifig)}>
+
+            <CardActions >
+                <Button size="large" color="secondary" onClick={AddLegoToWishlist(props.legoMinifig)}>
                     Add to WishList
                 </Button>
                 <Button size="small" color="secondary">

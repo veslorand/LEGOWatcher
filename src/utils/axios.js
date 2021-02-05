@@ -33,6 +33,5 @@ export const AddLegoToWishlist = (lego) => {
     const [wishlist, setWishlist] = useContext(WishlistContext);
     useEffect(() => {
         setWishlist([...wishlist, lego]);
-        console.log(lego)
     }, [lego, setWishlist, wishlist])
 };
