@@ -41,9 +41,8 @@ function LegoMinifigElement(props) {
 }
 
 const Card = styled.div`
-
-  font-weight: bold;
-  color: ${theme ? "#000000" : "#ff0000"};
+  font-weight: bolder;
+  color: ${theme ? "#ffffff" : "#ff0000"};
   background-color: ${theme ? "#ff0000" : "#333"};
   box-shadow: 0 1px 3px;
   transition: all 0.5s;
@@ -55,10 +54,10 @@ const Card = styled.div`
 
 const useStyles = makeStyles({
     root: {
-        width: 400,
+        width: 300,
     },
     media: {
-        height: 400,
+        height: 300,
     },
 });
 

@@ -5,17 +5,15 @@ import {Grid} from "@material-ui/core";
 
 
 function LegoMinifigList() {
-    const [legoMinifig] = useContext(LegoMinifigsContext);
+    const [legoMinifigs] = useContext(LegoMinifigsContext);
 
     return (
         <Grid container spacing={1}>
-            {legoMinifig.map((legoMinifig) => (
-                <Grid container item xs={12} spacing={3}>
+            {legoMinifigs.map((legoMinifig) => (
                 <LegoMinifigElement
                     key={legoMinifig.id}
                     legoMinifig={legoMinifig}
                 />
-                </Grid>
             ))}
         </Grid>
     );
